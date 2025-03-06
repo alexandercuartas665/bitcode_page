@@ -1,0 +1,32 @@
+{
+  "name": "gunter",
+  "version": "1.8.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^1.7.2",
+    "fslightbox-react": "^1.7.6",
+    "next": "14.2.3",
+    "nodemailer": "^6.9.13",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "react": "^18",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-dom": "^18",
+    "sweetalert2": "^11.11.0",
+    "sweetalert2-react-content": "^5.0.7",
+    "swiper": "^11.1.4",
+    "typescript": "^5.8.2",
+    "uikit": "^3.21.5"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.10",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
