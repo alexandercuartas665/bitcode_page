@@ -23,7 +23,7 @@ const Mision: FC = () => {
               <div className="item">
                 <Image
                   src="/images/about3.jpg"
-                  alt="Imagen visión empresarial"
+                  alt="Imagen misión empresarial"
                   width={380}
                   height={350}
                 />
