@@ -17,11 +17,6 @@ const poppins = Poppins({
   subsets: ["latin"]
 });
 
-export const metadata = {
-  title: "Gunter - React Nextjs IT & Digital Marketing Agency Template",
-  description: "React Nextjs IT & Digital Marketing Agency Template",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">

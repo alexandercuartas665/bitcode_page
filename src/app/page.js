@@ -1,12 +1,18 @@
 import SeperatedBar from "@/components/Common/SeperatedBar";
-import About from "@/pages/About";
 import Banner from "@/pages/Banner";
-import FeaturesTwo from "@/pages/FeaturesTwo";
-import Projects from "@/pages/Projects";
-import Services from "@/pages/Services";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import ContactForm from "./contact/ContactForm";
+import Services from "./services/Services";
+import Products from "./products/Products";
+
+export const metadata = {
+  title: "Inicio - BITCODE",
+  description: "Pagina inicio.",
+  icons: {
+    icon: "/favicon.png"
+  }
+};
 
 export default function Home() {
   return (
@@ -15,11 +21,7 @@ export default function Home() {
 
       <Banner />
 
-      <FeaturesTwo />
-
       <SeperatedBar />
-
-      <About />
 
       <SeperatedBar />
 
@@ -27,7 +29,7 @@ export default function Home() {
 
       <SeperatedBar />
 
-      <Projects />
+      <Products />
 
       <SeperatedBar />
 

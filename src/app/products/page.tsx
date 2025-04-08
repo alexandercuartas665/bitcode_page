@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
-import ContactForm from "./ContactForm";
+import Products from "./Products";
 
 export const metadata = {
-  title: "Contacto - BITCODE",
-  description: "Pagina contacto.",
+  title: "Productos - BITCODE",
+  description: "Pagina productos.",
   icons: {
     icon: "/favicon.png"
   }
@@ -16,7 +16,7 @@ const Contact: FC = () => {
     <>
       <Navbar isScrolledParam={true} />
       <div style={{ paddingTop: "3rem" }}>
-        <ContactForm />
+        <Products />
       </div>
       <Footer />
     </>

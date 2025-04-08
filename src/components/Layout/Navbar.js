@@ -2,13 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 const Navbar = ({ isScrolledParam = false }) => {
-  const pathname = usePathname();
   const [isScrolled, setScrolled] = useState(isScrolledParam);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   React.useEffect(() => {
     let elementId = document.getElementById("navbar");
@@ -39,22 +37,21 @@ const Navbar = ({ isScrolledParam = false }) => {
       {/* Start Navbar Area */}
       <header id="navbar" className="header-area uk-dark">
         <div className="uk-container">
-          <div className="uk-navbar">
-            <div className="logo uk-navbar-left">
-              <Link href="/">
-                <Image
-                  src={isScrolled ? "/images/logo2.png" : "/images/logo.png"}
-                  alt="logo"
-                  width={130}
-                  height={27}
-                />
-              </Link>
-            </div>
+          <div className="uk-navbar" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <Link href="/">
+              <img
+                src={isScrolled ? "/images/logo2.png" : "/images/logo.png"}
+                alt="Logo de Bitcode"
+                style={{ width: 200, height: "auto", objectFit: "contain" }}
+                className="logoHeader"
+              />
+            </Link>
 
             <div
               className="uk-navbar-toggle"
               id="navbar-toggle"
               onClick={handleToggleMobileNav}
+              style={{ top: "unset", height: "100%" }}
             >
               <span></span>
               <span></span>
@@ -69,35 +66,49 @@ const Navbar = ({ isScrolledParam = false }) => {
                   </li>
 
                   <li>
-                    <AnchorLink offset={() => 100} href="#about">
-                      About
-                    </AnchorLink>
+                    <Link href="/services">Servicios</Link>
                   </li>
 
                   <li>
-                    <AnchorLink href="#services" offset={() => 100}>
-                      Services
-                    </AnchorLink>
+                    <Link href="/products">Productos</Link>
                   </li>
 
-                  <li>
-                    <AnchorLink href="#project" offset={() => 100}>
-                      Project
-                    </AnchorLink>
-                  </li>
+                  {/* <li
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                    style={{ position: 'relative' }}
+                  >
+                    <Link href="#">Sobre nosotros</Link>
+                    <div style={{
+                      display: isDropdownOpen ? 'block' : 'none',
+                      position: 'absolute',
+                      top: '100%',
+                      left: '-25%',
+                      right: '50%',
+                      background: '#fff',
+                      border: '1px solid #ccc',
+                      boxShadow: '0 2px 4px rgba(0,0,0,.1)',
+                      borderRadius: '5px',
+                      width: 150,
+                      zIndex: '100',
+                      padding: "20px 10px",
+                    }}>
+                      <ul className="uk-nav uk-navbar-dropdown-nav">
+                        <li>
+                          <Link href="/mision" style={{ color: "black" }}>Misión</Link>
+                        </li>
+                        <li>
+                          <Link href="/valores" style={{ color: "black" }}>Valores</Link>
+                        </li>
+                        <li>
+                          <Link href="/vision" style={{ color: "black" }}>Visión</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </li> */}
 
                   <li>
-                    <AnchorLink href="#clients" offset={() => 100}>
-                      Clients
-                    </AnchorLink>
-                  </li>
-
-                  <li>
-                    <Link href="/mision">Misión</Link>
-                  </li>
-
-                  <li>
-                    <Link href="/vision">Visión</Link>
+                    <Link href="/about">Sobre nosotros</Link>
                   </li>
 
                   <li>
@@ -106,7 +117,7 @@ const Navbar = ({ isScrolledParam = false }) => {
                 </ul>
               </nav>
 
-              <div className="lang">
+              {/* <div className="lang">
                 <form>
                   <div>
                     <select>
@@ -115,7 +126,7 @@ const Navbar = ({ isScrolledParam = false }) => {
                     </select>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -146,51 +157,15 @@ const Navbar = ({ isScrolledParam = false }) => {
               </li>
 
               <li>
-                <AnchorLink
-                  offset={() => 100}
-                  href="#about"
-                  onClick={handleToggleMobileNav}
-                >
-                  About
-                </AnchorLink>
+                <Link href="/services" onClick={handleToggleMobileNav}>Servicios</Link>
               </li>
 
               <li>
-                <AnchorLink
-                  offset={() => 100}
-                  href="#services"
-                  onClick={handleToggleMobileNav}
-                >
-                  Services
-                </AnchorLink>
+                <Link href="/products" onClick={handleToggleMobileNav}>Productos</Link>
               </li>
 
               <li>
-                <AnchorLink
-                  offset={() => 100}
-                  href="#project"
-                  onClick={handleToggleMobileNav}
-                >
-                  Project
-                </AnchorLink>
-              </li>
-
-              <li>
-                <AnchorLink
-                  offset={() => 100}
-                  href="#clients"
-                  onClick={handleToggleMobileNav}
-                >
-                  Clients
-                </AnchorLink>
-              </li>
-
-              <li>
-                <Link href="/mision" onClick={handleToggleMobileNav}>Misión</Link>
-              </li>
-
-              <li>
-                <Link href="/vision" onClick={handleToggleMobileNav}>Visión</Link>
+                <Link href="/about" onClick={handleToggleMobileNav}>Sobre nosotros</Link>
               </li>
 
               <li>
