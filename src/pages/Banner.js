@@ -31,7 +31,7 @@ const Banner = () => {
                   data-aos-once="true"
                   data-aos-duration="1000"
                 >
-                  Trusted Digital <br /> agency
+                Soluciones Tecnológicas a Medida
                 </h1>
 
                 <p
@@ -40,9 +40,10 @@ const Banner = () => {
                   data-aos-once="true"
                   data-aos-duration="1000"
                 >
-                  We have built trust by delivering the best results for
-                  clients! Our team is focussed on meeting your online business
-                  ultimate targets! Let’s try with us!
+                  Somos tu aliado estratégico en transformación digital,
+                  diseñamos y desarrollamos soluciones de software e infraestructuras TI escalables que optimizan procesos, 
+                  mejoran la eficiencia operativa y potencian el crecimiento de tu negocio.
+                  ¡Impulsa tu empresa al siguiente nivel digital con Bitcode IT Service!
                 </p>
 
                 <div
@@ -53,11 +54,13 @@ const Banner = () => {
                   data-aos-duration="1000"
                 >
                   <Link href="#contact" className="uk-button uk-button-default">
-                    Get Started
+                    ¡Trasforma tu negocio!
                   </Link>
 
                   <div
                     className="video-btn"
+                    //se crea un estilo directo para ocultar boton sin eliminar
+                    style={{ display:"none"}}
                     onClick={() => setToggler(!toggler)}
                   >
                     <i className="bx bx-play"></i> Watch Video

@@ -108,12 +108,17 @@ const Navbar = ({ isScrolledParam = false }) => {
                   </li> */}
 
                   <li>
-                    <Link href="/about">Sobre nosotros</Link>
+                    <Link href="/about">Nosotros</Link>
                   </li>
 
                   <li>
                     <Link href="/contact">Contacto</Link>
                   </li>
+
+                  <li>
+                  <a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer">Ir a Ecorex</a>
+                  </li>
+
                 </ul>
               </nav>
 
@@ -171,6 +176,10 @@ const Navbar = ({ isScrolledParam = false }) => {
               <li>
                 <Link href="/contact" onClick={handleToggleMobileNav}>Contacto</Link>
               </li>
+              <li>
+                <a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer" onClick={handleToggleMobileNav}>Ir a Ecorex</a>
+              </li>
+              
             </ul>
           </nav>
         </div>

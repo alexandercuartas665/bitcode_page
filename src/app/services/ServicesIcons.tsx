@@ -4,27 +4,27 @@ import { faAtom, faClock, faCloud, faCode, faDatabase, faDesktop, faFileShield, 
 
 export const servicesData: { name: string; desc: string; icon: IconDefinition; image: string; }[] = [
   {
-    name: "Alquiler de Equipos",
-    desc: "Brindamos servicios de alquiler de equipos tecnológicos, permitiéndote acceder a la última tecnología sin necesidad de una inversión inicial significativa, ideal para proyectos temporales o eventos especiales.",
-    icon: faHouseLaptop,
+    name: "Desarrollo a Medida",
+    desc: "Ofrecemos servicios de desarrollo de software a medida, creando soluciones tecnológicas personalizadas que se adaptan perfectamente a los procesos y objetivos de tu negocio.",
+    icon: faCode,
     image: "/images/services/equiposEscritorio.jpg"
   },
   {
-    name: "Soporte Corporativo",
-    desc: "Ofrecemos soporte técnico integral para empresas, con soluciones rápidas y efectivas para cualquier problema tecnológico, garantizando la continuidad operativa de tu negocio.",
-    icon: faHeadset,
-    image: "/images/services/equiposEscritorio.jpg"
-  },
-  {
-    name: "Soporte Horas",
-    desc: "Proveemos servicios de soporte técnico por horas, adaptándonos a tus necesidades específicas y ofreciendo asistencia puntual para resolver cualquier inconveniente tecnológico.",
-    icon: faClock,
+    name: "Implementación de Servidores",
+    desc: "Nos encargamos de la instalación y configuración de servidores, asegurando que estén optimizados para el rendimiento y la seguridad, adaptados a las necesidades específicas de tu empresa.",
+    icon: faDesktop,
     image: "/images/services/equiposEscritorio.jpg"
   },
   {
     name: "Bolsa de Soporte",
     desc: "Ofrecemos paquetes de horas de soporte técnico que puedes utilizar según tus necesidades, proporcionando flexibilidad y asegurando que siempre tengas acceso a asistencia especializada.",
     icon: faSackXmark,
+    image: "/images/services/equiposEscritorio.jpg"
+  },
+  {
+    name: "Soporte Corporativo",
+    desc: "Ofrecemos soporte técnico integral para empresas, con soluciones rápidas y efectivas para cualquier problema tecnológico, garantizando la continuidad operativa de tu negocio.",
+    icon: faHeadset,
     image: "/images/services/equiposEscritorio.jpg"
   },
   {
@@ -58,15 +58,15 @@ export const servicesData: { name: string; desc: string; icon: IconDefinition; i
     image: "/images/services/equiposEscritorio.jpg"
   },
   {
-    name: "Implementación de Servidores",
-    desc: "Nos encargamos de la instalación y configuración de servidores, asegurando que estén optimizados para el rendimiento y la seguridad, adaptados a las necesidades específicas de tu empresa.",
-    icon: faDesktop,
+    name: "Soporte Horas",
+    desc: "Proveemos servicios de soporte técnico por horas, adaptándonos a tus necesidades específicas y ofreciendo asistencia puntual para resolver cualquier inconveniente tecnológico.",
+    icon: faClock,
     image: "/images/services/equiposEscritorio.jpg"
   },
   {
-    name: "Desarrollo a Medida",
-    desc: "Ofrecemos servicios de desarrollo de software a medida, creando soluciones tecnológicas personalizadas que se adaptan perfectamente a los procesos y objetivos de tu negocio.",
-    icon: faCode,
+    name: "Alquiler de Equipos",
+    desc: "Brindamos servicios de alquiler de equipos tecnológicos, permitiéndote acceder a la última tecnología sin necesidad de una inversión inicial significativa, ideal para proyectos temporales o eventos especiales.",
+    icon: faHouseLaptop,
     image: "/images/services/equiposEscritorio.jpg"
   }
 ];
