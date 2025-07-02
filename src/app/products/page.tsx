@@ -4,8 +4,8 @@ import Footer from "@/components/Layout/Footer";
 import Products from "./Products";
 
 export const metadata = {
-  title: "Productos - BITCODE",
-  description: "Pagina productos.",
+  title: "Venta de Servicios de Infraestructura en TI, Equipos y Licencias - Bitcode",
+  description: "Suministramos infraestructura de TI, servidores, partes, periféricos y licenciamiento de software como Windows y Antivirus para tu empresa.",
   icons: {
     icon: "/favicon.png"
   }

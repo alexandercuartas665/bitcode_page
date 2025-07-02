@@ -4,6 +4,7 @@ import '../app/styles/boxicons.min.css';
 import '../../node_modules/uikit/dist/css/uikit.min.css';
 import "swiper/css";
 import "swiper/css/bundle";
+import WhatsAppButton from '@/components/Common/WhatsAppButton';
 
 // Global Styles
 import '../app/styles/custom.css';
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         {children}
 
+        <WhatsAppButton />
         <AosAnimation />
+
       </body>
     </html>
   );

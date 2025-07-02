@@ -5,8 +5,8 @@ import Footer from "@/components/Layout/Footer";
 import Services from "./Services";
 
 export const metadata = {
-  title: "Servicios - BITCODE",
-  description: "Pagina servicios.",
+ title: "Servicios TI y Desarrollo a Medida - Bitcode",
+  description: "Ofrecemos desarrollo de software, implementación de servidores, sistemas de backups, soporte corporativo y más soluciones TI para empresas.",
   icons: {
     icon: "/favicon.png"
   }

@@ -1211,373 +1211,49 @@ About CSS
 /*================================================
 Services CSS
 =================================================*/
-.services-area {
-  padding-bottom: 40px;
-}
+/* --- Estilos para las Nuevas Tarjetas de Servicio --- */
 
-.services-area .item {
-  margin-bottom: 30px;
-}
-
-.services-area .pagination-area {
-  margin-top: 20px;
-  margin-bottom: 30px !important;
-}
-
-.single-services {
-  position: relative;
-  z-index: 1;
-  background-color: #f9f9f9;
-  padding: 40px 55px 40px 108px;
-  transition: 0.5s;
-  border-radius: 65px 0 0 65px;
-}
-
-.single-services .icon {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  z-index: -1;
-  width: 75px;
-  height: 75px;
-  background: #ffffff;
-  display: inline-block;
+.service-card {
+  background-color: #f9f9f9; /* Un fondo suave para diferenciar de los productos */
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease-in-out;
+  height: 100%; /* Para que todas las tarjetas en una fila tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+  padding: 35px 25px;
   text-align: center;
-  border-radius: 50%;
-  color: #ed6c1b;
-  line-height: 75px;
-  margin-top: -38px;
-  transition: 0.5s;
 }
 
-.single-services .icon i::before {
-  font-size: 35px;
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #ed6c1b;
 }
 
-.single-services h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0;
-  transition: 0.5s;
-}
-
-.single-services h3 a {
-  color: #000000;
-}
-
-.single-services .link-btn {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  color: #bdbdbd;
-  display: block;
-  margin-top: -19px;
-  transition: 0.5s;
-}
-
-.single-services .link-btn::before {
-  font-size: 25px;
-}
-
-.single-services:hover,
-.single-services:focus,
-.single-services.active {
-  background: #ed6c1b;
-}
-
-.single-services:hover h3,
-.single-services:hover a,
-.single-services:focus h3,
-.single-services:focus a,
-.single-services.active h3,
-.single-services.active a {
-  color: #ffffff;
-}
-
-.single-services:hover .link-btn,
-.single-services:focus .link-btn,
-.single-services.active .link-btn {
-  right: 10px;
-  color: #ffffff;
-}
-
-.single-services-box {
-  background-color: #f7f7ff;
-  position: relative;
-  z-index: 1;
-  padding: 40px;
-  transition: 0.5s;
-}
-
-.single-services-box .icon {
-  color: #ed6c1b;
-  transition: 0.5s;
-}
-
-.single-services-box .icon i::before {
+.service-card .icon {
+  color: #ed6c1b; /* Color principal de la marca */
   font-size: 45px;
+  margin-bottom: 20px;
 }
 
-.single-services-box h3 {
-  margin-bottom: 0;
-  transition: 0.5s;
+.service-card h3 {
   font-size: 20px;
   font-weight: 700;
-}
-
-.single-services-box h3 a {
+  margin-top: 0;
+  margin-bottom: 15px;
   color: #000000;
 }
 
-.single-services-box .bar {
-  position: relative;
-  z-index: 1;
-  background: #ed6c1b;
-  width: 55px;
-  height: 3px;
-  transition: 0.5s;
-  margin-top: 7px;
-  margin-bottom: 20px;
+.service-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #848484;
+  margin-bottom: 0;
+  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
 }
 
-.single-services-box .bar::before,
-.single-services-box .bar::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 3px;
-  top: 0;
-  background: #ffffff;
-  transition: 0.5s;
-}
 
-.single-services-box .bar::after {
-  right: 10px;
-}
-
-.single-services-box .bar::before {
-  right: 20px;
-}
-
-.single-services-box p {
-  margin-bottom: 20px;
-  transition: 0.5s;
-}
-
-.single-services-box .link-btn {
-  display: inline-block;
-  position: relative;
-  color: #ffffff;
-}
-
-.single-services-box .link-btn span {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-}
-
-.single-services-box .link-btn i {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #ed6c1b;
-  color: #ffffff;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-
-.single-services-box .link-btn:hover span,
-.single-services-box .link-btn:focus span {
-  opacity: 1;
-  visibility: visible;
-  padding-right: 5px;
-}
-
-.single-services-box .link-btn:hover i,
-.single-services-box .link-btn:focus i {
-  left: 100%;
-  width: 25px;
-  height: 25px;
-  line-height: 23px;
-}
-
-.single-services-box .link-btn:hover i::before,
-.single-services-box .link-btn:focus i::before {
-  font-size: 12px;
-}
-
-.single-services-box .animation-img img {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-}
-
-.single-services-box .animation-img img:nth-child(1) {
-  left: 0;
-  bottom: 0;
-}
-
-.single-services-box .animation-img img:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-}
-
-.single-services-box .animation-img img:nth-child(3) {
-  top: 0;
-  left: 0;
-}
-
-.single-services-box .animation-img img:nth-child(4) {
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-}
-
-.single-services-box .animation-img img:nth-child(5) {
-  right: 0;
-  top: 0;
-}
-
-.single-services-box .animation-img img:nth-child(6) {
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-
-.single-services-box .animation-img img:nth-child(7) {
-  bottom: 0;
-  right: 0;
-}
-
-.single-services-box .animation-img img:nth-child(8) {
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-}
-
-.single-services-box:hover,
-.single-services-box:focus {
-  background: #ed6c1b;
-}
-
-.single-services-box:hover .icon,
-.single-services-box:focus .icon {
-  color: #ffffff;
-}
-
-.single-services-box:hover h3 a,
-.single-services-box:focus h3 a {
-  color: #ffffff;
-}
-
-.single-services-box:hover p,
-.single-services-box:focus p {
-  color: #ffffff;
-}
-
-.single-services-box:hover .bar,
-.single-services-box:focus .bar {
-  background: #ffffff;
-}
-
-.single-services-box:hover .bar::after,
-.single-services-box:hover .bar::before,
-.single-services-box:focus .bar::after,
-.single-services-box:focus .bar::before {
-  background: #ed6c1b;
-}
-
-.single-services-box:hover .link-btn span,
-.single-services-box:focus .link-btn span {
-  opacity: 1;
-  visibility: visible;
-  padding-right: 7px;
-}
-
-.single-services-box:hover .link-btn i,
-.single-services-box:focus .link-btn i {
-  left: 100%;
-  width: 25px;
-  height: 25px;
-  line-height: 23px;
-  background-color: #ffffff;
-  color: #ed6c1b;
-}
-
-.single-services-box:hover .link-btn i::before,
-.single-services-box:focus .link-btn i::before {
-  font-size: 12px;
-}
-
-.single-services-box:hover .animation-img img,
-.single-services-box:focus .animation-img img {
-  opacity: 1;
-  visibility: visible;
-}
-
-.single-services-box:hover .animation-img img:nth-child(1),
-.single-services-box:focus .animation-img img:nth-child(1) {
-  left: -25px;
-  bottom: -24px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(2),
-.single-services-box:focus .animation-img img:nth-child(2) {
-  left: -35px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(3),
-.single-services-box:focus .animation-img img:nth-child(3) {
-  top: -15px;
-  left: -16px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(4),
-.single-services-box:focus .animation-img img:nth-child(4) {
-  top: -28px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(5),
-.single-services-box:focus .animation-img img:nth-child(5) {
-  right: -25px;
-  top: -26px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(6),
-.single-services-box:focus .animation-img img:nth-child(6) {
-  right: -25px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(7),
-.single-services-box:focus .animation-img img:nth-child(7) {
-  bottom: -26px;
-  right: -25px;
-}
-
-.single-services-box:hover .animation-img img:nth-child(8),
-.single-services-box:focus .animation-img img:nth-child(8) {
-  bottom: -25px;
-}
-
-.services-slides .swiper-pagination {
-  position: initial;
-}
-
-.services-slides .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-}
-
-.services-slides .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #ed6c1b;
-}
 
 /*================================================
 Services Details CSS
@@ -1709,6 +1385,67 @@ Services Details CSS
 .services-details-desc .our-work-benefits .accordion .accordion-content.show {
   display: block;
 }
+
+/*================================================
+Products CSS
+=================================================*/
+/* --- Estilos para las Nuevas Tarjetas de Producto --- */
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  height: 100%; /* Necesario para que las tarjetas en la misma fila tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Mantiene las esquinas redondeadas en la imagen */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-image {
+  width: 100%;
+  height: 200px; /* Altura fija para el contenedor de la imagen */
+  overflow: hidden;
+}
+
+/* Asegura que la imagen llene el contenedor sin deformarse */
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.product-card-content {
+  padding: 25px;
+  text-align: center;
+  flex-grow: 1; /* Permite que esta sección crezca para rellenar el espacio */
+}
+
+.product-card-content .icon {
+  color: #ed6c1b; /* Color principal de la marca */
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.product-card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.product-card-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #848484;
+  margin-bottom: 0;
+}
+
 
 /*================================================
 Project CSS
@@ -3587,6 +3324,39 @@ Footer CSS
 .copyright-area .go-top:focus {
   color: #ffffff;
   background: #ed6c1b;
+}
+
+/* --- Estilos para el Footer Mejorado --- */
+
+.footer-quick-links {
+  list-style: none; /* Quita los puntos de la lista */
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-quick-links li {
+  margin-bottom: 12px;
+}
+
+.footer-quick-links li a {
+  color: #999999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-quick-links li a:hover {
+  color: #ed6c1b; /* Color principal de la marca */
+  padding-left: 5px; /* Pequeño desplazamiento al pasar el cursor */
+}
+
+.copyright-area p, .copyright-area a {
+    color: #999999;
+    font-size: 14px;
+}
+
+.copyright-area a:hover {
+    color: #ed6c1b;
+    text-decoration: underline;
 }
 
 /*================================================
@@ -5719,4 +5489,84 @@ Newsletter CSS
 
 .text_container strong {
   color: #000000;
+}
+
+
+/*================================================
+WhatsApp CSS
+=================================================*/
+/* Estilos para el botón flotante de WhatsApp con burbuja de texto */
+.whatsapp-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espacio entre el texto y el botón */
+}
+
+/* Burbuja de texto persistente */
+.whatsapp-persistent-tooltip {
+  padding: 10px 15px;
+  background-color: #ffffff; /* Fondo blanco para que resalte */
+  color: #333;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Triángulo de la burbuja que apunta al botón */
+.whatsapp-persistent-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%; /* Se posiciona a la derecha de la burbuja */
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff; /* Apunta hacia el botón */
+}
+
+/* Botón circular de WhatsApp */
+.whatsapp-float-button {
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: pulse-whatsapp 2s infinite; /* Animación de pulso */
+}
+
+.whatsapp-float-button:hover {
+  animation: none; /* Pausa la animación en hover para no molestar */
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* Keyframes para la animación de pulso */
+@keyframes pulse-whatsapp {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
