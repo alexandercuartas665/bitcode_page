@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,24 +8,32 @@ const Navbar = ({ isScrolledParam = false }) => {
   const [isScrolled, setScrolled] = useState(isScrolledParam);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  React.useEffect(() => {
-    let elementId = document.getElementById("navbar");
-
+  useEffect(() => {
     if (isScrolledParam) {
       setScrolled(true);
-      elementId.classList.add("uk-sticky-fixed");
-    } else {
-      document.addEventListener("scroll", () => {
-        if (window.scrollY > 170) {
-          setScrolled(true);
-          elementId.classList.add("uk-sticky-fixed");
-        } else {
-          setScrolled(false);
-          elementId.classList.remove("uk-sticky-fixed");
-        }
-      });
+      return;
     }
-  });
+
+    const elementId = document.getElementById("navbar");
+    if (!elementId) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 170) {
+        setScrolled(true);
+        elementId.classList.add("uk-sticky-fixed");
+      } else {
+        setScrolled(false);
+        elementId.classList.remove("uk-sticky-fixed");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScrolledParam]);
+
 
   const [isActiveMobileNav, setActiveMobileNav] = useState("false");
   const handleToggleMobileNav = () => {
@@ -39,10 +47,12 @@ const Navbar = ({ isScrolledParam = false }) => {
         <div className="uk-container">
           <div className="uk-navbar" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <Link href="/">
-              <img
+              <Image
                 src={isScrolled ? "/images/logo2.png" : "/images/logo.png"}
                 alt="Logo de Bitcode"
-                style={{ width: 200, height: "auto", objectFit: "contain" }}
+                width={200}
+                height={45}
+                style={{ objectFit: "contain" }}
                 className="logoHeader"
               />
             </Link>
@@ -64,70 +74,20 @@ const Navbar = ({ isScrolledParam = false }) => {
                   <li>
                     <Link href="/">Inicio</Link>
                   </li>
-
                   <li>
                     <Link href="/services">Servicios</Link>
                   </li>
-
                   <li>
                     <Link href="/products">Productos</Link>
                   </li>
-
-                  {/* <li
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                    style={{ position: 'relative' }}
-                  >
-                    <Link href="#">Sobre nosotros</Link>
-                    <div style={{
-                      display: isDropdownOpen ? 'block' : 'none',
-                      position: 'absolute',
-                      top: '100%',
-                      left: '-25%',
-                      right: '50%',
-                      background: '#fff',
-                      border: '1px solid #ccc',
-                      boxShadow: '0 2px 4px rgba(0,0,0,.1)',
-                      borderRadius: '5px',
-                      width: 150,
-                      zIndex: '100',
-                      padding: "20px 10px",
-                    }}>
-                      <ul className="uk-nav uk-navbar-dropdown-nav">
-                        <li>
-                          <Link href="/mision" style={{ color: "black" }}>Misión</Link>
-                        </li>
-                        <li>
-                          <Link href="/valores" style={{ color: "black" }}>Valores</Link>
-                        </li>
-                        <li>
-                          <Link href="/vision" style={{ color: "black" }}>Visión</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </li> */}
-
                   <li>
                     <Link href="/about">Nosotros</Link>
                   </li>
-
                   <li>
-                  <a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer">Ir a Ecorex</a>
+                    <a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer">Ir a Ecorex</a>
                   </li>
-
                 </ul>
               </nav>
-
-              {/* <div className="lang">
-                <form>
-                  <div>
-                    <select>
-                      <option value="eng">En</option>
-                      <option value="ge">Ge</option>
-                    </select>
-                  </div>
-                </form>
-              </div> */}
             </div>
           </div>
         </div>
@@ -136,8 +96,7 @@ const Navbar = ({ isScrolledParam = false }) => {
 
       {/* Start Mobile Navbar */}
       <div
-        className={`mobile-navbar uk-mobile-navbar ${isActiveMobileNav ? "" : "show"
-          }`}
+        className={`mobile-navbar uk-mobile-navbar ${isActiveMobileNav ? "" : "show"}`}
       >
         <div className="uk-offcanvas-bar">
           <button
@@ -151,32 +110,14 @@ const Navbar = ({ isScrolledParam = false }) => {
 
           <nav className="uk-navbar-container">
             <ul className="uk-navbar-nav">
-              <li>
-                <Link href="/" onClick={handleToggleMobileNav}>
-                  Inicio
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/services" onClick={handleToggleMobileNav}>Servicios</Link>
-              </li>
-
-              <li>
-                <Link href="/products" onClick={handleToggleMobileNav}>Productos</Link>
-              </li>
-
-              <li>
-                <Link href="/about" onClick={handleToggleMobileNav}>Sobre nosotros</Link>
-              </li>
-
-              <li>
-                <a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer" onClick={handleToggleMobileNav}>Ir a Ecorex</a>
-              </li>
-              
+              <li><Link href="/" onClick={handleToggleMobileNav}>Inicio</Link></li>
+              <li><Link href="/services" onClick={handleToggleMobileNav}>Servicios</Link></li>
+              <li><Link href="/products" onClick={handleToggleMobileNav}>Productos</Link></li>
+              <li><Link href="/about" onClick={handleToggleMobileNav}>Sobre nosotros</Link></li>
+              <li><a href="https://app.bitcode.com.co" target="_blank" rel="noopener noreferrer" onClick={handleToggleMobileNav}>Ir a Ecorex</a></li>
             </ul>
           </nav>
         </div>
-
         <div className="close-btn" onClick={handleToggleMobileNav}></div>
       </div>
       {/* End Mobile Navbar */}

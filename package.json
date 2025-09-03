@@ -25,6 +25,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18",
     "react-sweetalert2": "^0.6.0",
+    "sharp": "^0.34.3",
     "sweetalert2": "^11.11.0",
     "sweetalert2-react-content": "^5.0.7",
     "swiper": "^11.1.4",

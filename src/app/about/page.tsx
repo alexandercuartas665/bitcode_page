@@ -2,6 +2,11 @@
 import React, { FC } from "react";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
+import Image from "next/image"; // 1. Importar el componente Image
+
+// Importa las imágenes para que Next.js pueda determinar sus dimensiones
+import aboutImage2 from "../../../public/images/about2.jpg";
+import aboutImage3 from "../../../public/images/about3.jpg";
 
 export const metadata = {
   title: "Sobre Nosotros - BITCODE",
@@ -64,11 +69,13 @@ const About: FC = () => {
 
               {/* Columna 2: Imagen */}
               <div className="uk-width-1-3@m uk-flex-first">
-                <img 
-                  src="/images/about3.jpg" 
-                  alt="Imagen misión empresarial" 
+                {/* 2. Reemplazar <img> con <Image /> */}
+                <Image
+                  src={aboutImage3}
+                  alt="Imagen misión empresarial"
                   className="uk-align-center"
                   style={{ borderRadius: '8px' }}
+                  placeholder="blur"
                 />
               </div>
 
@@ -83,11 +90,13 @@ const About: FC = () => {
 
               {/* Columna 1: Imagen */}
               <div className="uk-width-1-3@m">
-                <img 
-                  src="/images/about2.jpg" 
-                  alt="Imagen visión empresarial" 
+                {/* 3. Reemplazar <img> con <Image /> */}
+                <Image
+                  src={aboutImage2}
+                  alt="Imagen visión empresarial"
                   className="uk-align-center"
                   style={{ borderRadius: '8px' }}
+                  placeholder="blur"
                 />
               </div>
 
