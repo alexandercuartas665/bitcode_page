@@ -21,6 +21,8 @@ const Banner = () => {
         className="uk-banner main-banner"
         style={{ backgroundImage: `url(/images/man1.png)` }}
       >
+        {/* La capa de superposición ha sido eliminada */}
+        
         <div className="d-table">
           <div className="d-table-cell">
             <div className="uk-container">
@@ -31,7 +33,7 @@ const Banner = () => {
                   data-aos-once="true"
                   data-aos-duration="1000"
                 >
-                Soluciones Tecnológicas a Medida
+                  Innovación Tecnológica para Impulsar tu Negocio
                 </h1>
 
                 <p
@@ -40,31 +42,24 @@ const Banner = () => {
                   data-aos-once="true"
                   data-aos-duration="1000"
                 >
-                  Somos tu aliado estratégico en transformación digital,
-                  diseñamos y desarrollamos soluciones de software e infraestructuras TI escalables que optimizan procesos, 
-                  mejoran la eficiencia operativa y potencian el crecimiento de tu negocio.
-                  ¡Impulsa tu empresa al siguiente nivel digital con Bitcode IT Service!
+                  Tu aliado estratégico en transformación digital, brindadote soluciones de software e infraestructura TI innovadoras y escalables 📈
+                  <br></br> 
+                  Optimizamos procesos y potenciamos el crecimiento de tu empresa 🚀
                 </p>
 
                 <div
-                  style={{ display: "flex", alignItems: "center" }}
+                  className="banner-btn"
                   data-aos="fade-up"
                   data-aos-delay="300"
                   data-aos-once="true"
                   data-aos-duration="1000"
                 >
-                  <Link href="#contact" className="uk-button uk-button-default">
-                    ¡Trasforma tu negocio!
+                  <Link href="/contact" className="uk-button uk-button-primary">
+                    Solicita una Asesoría
                   </Link>
-
-                  <div
-                    className="video-btn"
-                    //se crea un estilo directo para ocultar boton sin eliminar
-                    style={{ display:"none"}}
-                    onClick={() => setToggler(!toggler)}
-                  >
-                    <i className="bx bx-play"></i> Watch Video
-                  </div>
+                  <Link href="/services" className="uk-button uk-button-default" style={{ marginLeft: '10px' }}>
+                    Nuestros Servicios
+                  </Link>
                 </div>
               </div>
             </div>

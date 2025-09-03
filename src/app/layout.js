@@ -5,6 +5,7 @@ import '../../node_modules/uikit/dist/css/uikit.min.css';
 import "swiper/css";
 import "swiper/css/bundle";
 import WhatsAppButton from '@/components/Common/WhatsAppButton';
+import Script from 'next/script';
 
 // Global Styles
 import '../app/styles/custom.css';
@@ -26,7 +27,8 @@ export default function RootLayout({ children }) {
 
         <WhatsAppButton />
         <AosAnimation />
-
+        <Script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js" />
+        <Script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js" />
       </body>
     </html>
   );

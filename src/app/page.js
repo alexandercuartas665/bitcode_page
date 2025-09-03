@@ -5,6 +5,10 @@ import Navbar from "@/components/Layout/Navbar";
 //import ContactForm from "./contact/ContactForm";
 import Services from "./services/Services";
 import Products from "./products/Products";
+import Clients from "@/components/Common/Clients";
+import Process from "@/components/Common/Process";
+import AboutSummary from "@/components/Common/AboutSummary";
+import FinalCTA from "@/components/Common/FinalCTA";
 
 export const metadata = {
   title: "Bitcode IT Services - Soluciones Tecnológicas a Medida",
@@ -18,10 +22,18 @@ export default function Home() {
       <Navbar />
 
       <Banner />
+
+      <Clients />
       
       <Services />
 
+      <Process />
+
       <Products />
+
+      <AboutSummary />
+
+      <FinalCTA />
 
       {/* <Patrocinadores /> */}
 

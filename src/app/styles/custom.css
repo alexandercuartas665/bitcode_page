@@ -1211,46 +1211,66 @@ About CSS
 /*================================================
 Services CSS
 =================================================*/
-/* --- Estilos para las Nuevas Tarjetas de Servicio --- */
+/* --- ESTILOS PARA LA SECCIÓN DE SERVICIOS MEJORADA --- */
 
-.service-card {
-  background-color: #f9f9f9; /* Un fondo suave para diferenciar de los productos */
-  border-radius: 8px;
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease-in-out;
-  height: 100%; /* Para que todas las tarjetas en una fila tengan la misma altura */
-  display: flex;
-  flex-direction: column;
-  padding: 35px 25px;
-  text-align: center;
+.service-card-improved {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px; 
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-color: #ed6c1b;
+.service-card-improved .icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #0056b3; /* Color primario para los iconos */
 }
 
-.service-card .icon {
-  color: #ed6c1b; /* Color principal de la marca */
-  font-size: 45px;
-  margin-bottom: 20px;
+.service-card-improved .service-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
-.service-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #000000;
+.service-card-improved .service-content p {
+    color: #666;
+    flex-grow: 1; /* Hace que el párrafo ocupe el espacio disponible */
 }
 
-.service-card p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #848484;
-  margin-bottom: 0;
-  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+.service-card-improved .read-more-btn {
+    color: #0056b3;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    opacity: 0; /* Oculto por defecto */
+    transform: translateY(10px); /* Ligeramente desplazado hacia abajo */
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card-improved:hover {
+    transform: translateY(-10px); /* La tarjeta se eleva */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-improved:hover .read-more-btn {
+    opacity: 1; /* El botón aparece al hacer hover */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.read-more-btn i {
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(5px); /* La flecha se mueve al hacer hover en el botón */
 }
 
 
@@ -1386,66 +1406,216 @@ Services Details CSS
   display: block;
 }
 
+/* --- ESTILOS PARA LA LISTA DE SUB-SERVICIOS DENTRO DE LAS TARJETAS --- */
+
+.subservices-list {
+  list-style: none; /* Quita los puntos por defecto de la lista */
+  padding: 0;
+  margin-top: 20px; /* Espacio entre la descripción y la lista */
+  text-align: left; /* Alinea el texto de la lista a la izquierda */
+  flex-grow: 1; /* Ayuda a empujar el contenido hacia arriba */
+}
+
+.subservices-list li {
+  color: #555; /* Un color de texto legible */
+  font-size: 15px;
+  margin-bottom: 8px; /* Espacio entre cada ítem de la lista */
+  position: relative;
+  padding-left: 20px; /* Espacio para el ícono de check */
+}
+
+/* Añade un ícono de 'check' antes de cada sub-servicio */
+.subservices-list li::before {
+  content: '\2713'; /* Código para el símbolo de check ✔ */
+  color: #ed6c1b; /* Color naranja de la marca */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE PROCESO --- */
+
+.process-section {
+    position: relative;
+    background-color: #ffffff; /* Fondo blanco para que resalte */
+}
+
+.process-card {
+    position: relative;
+    padding: 20px;
+}
+
+.process-icon {
+    width: 90px;
+    height: 90px;
+    background-color: #f9f9f9;
+    border: 2px solid #ed6c1b;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #ed6c1b;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.process-card:hover .process-icon {
+    background-color: #ed6c1b;
+    color: #ffffff;
+    transform: rotate(360deg);
+}
+
+.process-step {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid #fff;
+}
+
+.process-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    color: #666;
+}
+
+/* Líneas de conexión (opcional pero recomendado) */
+.process-card::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: 100%;
+    width: 100%;
+    border-top: 2px dashed #dddddd;
+    z-index: -1;
+}
+
+/* Ocultar la línea del último elemento */
+.uk-grid > div:last-child .process-card::after {
+    display: none;
+}
+
+
 /*================================================
 Products CSS
 =================================================*/
-/* --- Estilos para las Nuevas Tarjetas de Producto --- */
 
-.product-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-  height: 100%; /* Necesario para que las tarjetas en la misma fila tengan la misma altura */
-  display: flex;
-  flex-direction: column;
-  overflow: hidden; /* Mantiene las esquinas redondeadas en la imagen */
+.product-card-simple {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex; /* Mantenemos flexbox */
+    flex-direction: column; /* Dirección vertical */
+    /* ELIMINAMOS height: 100% para evitar el estiramiento forzado */
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.product-card-simple:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.product-card-image {
-  width: 100%;
-  height: 200px; /* Altura fija para el contenedor de la imagen */
-  overflow: hidden;
+.product-image-container {
+    width: 100%;
+    /* Usamos aspect-ratio para mantener la proporción de la imagen sin estirarla */
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
 }
 
-/* Asegura que la imagen llene el contenedor sin deformarse */
-.product-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.product-card-content {
-  padding: 25px;
-  text-align: center;
-  flex-grow: 1; /* Permite que esta sección crezca para rellenar el espacio */
+.product-content-simple {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio */
+    flex-grow: 1; /* Permite que esta sección ocupe el espacio sobrante */
 }
 
-.product-card-content .icon {
-  color: #ed6c1b; /* Color principal de la marca */
-  font-size: 40px;
-  margin-bottom: 15px;
+.product-content-simple h3 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo si el título es corto */
 }
 
-.product-card-content h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 10px;
+/* Estilos para el Modal (sin cambios, pero se mantienen por si acaso) */
+.product-modal-content {
+    border-radius: 10px;
+    padding: 30px !important;
 }
 
-.product-card-content p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #848484;
-  margin-bottom: 0;
+.product-modal-content .modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
 }
 
+.product-modal-content .uk-modal-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.product-modal-content p {
+    font-size: 16px;
+    margin: 15px 0 30px;
+}
+
+/* --- ESTILOS ADICIONALES PARA EL CARRUSEL DE PRODUCTOS --- */
+
+/* Asegura que cada item del slider tenga el padding correcto de la grilla */
+.uk-slider-items.uk-grid > * {
+    padding-left: 15px; /* Espaciado izquierdo del item */
+}
+.uk-slider-items.uk-grid {
+    margin-left: -15px; /* Compensa el padding */
+}
+
+/* Mejora la visibilidad de las flechas de navegación */
+.products-area .uk-slidenav {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+
+.products-area .uk-slidenav:hover {
+    color: #fff;
+    background-color: #ed6c1b;
+}
+
+/* Estilo para los puntos de navegación (dotnav) */
+.products-area .uk-dotnav > * > * {
+    border: 1px solid #ccc;
+}
+
+.products-area .uk-dotnav > .uk-active > * {
+    background-color: #ed6c1b;
+    border-color: transparent;
+}
 
 /*================================================
 Project CSS
@@ -2579,7 +2749,7 @@ Contact CSS
   top: 25%;
 }
 
-#contactForm .uk-grid-medium {
+#contactForm .uk-grid-large {
   margin-left: -15px;
 }
 
@@ -5553,6 +5723,250 @@ WhatsApp CSS
   animation: none; /* Pausa la animación en hover para no molestar */
   transform: scale(1.1);
   color: #fff;
+}
+
+.main-banner-content h1,
+.main-banner-content p {
+    /* Un negro elegante y moderno, no es un negro puro (#000) */
+    color: #212529; 
+
+    /* Sombra de texto blanca y muy sutil para dar relieve y contraste sobre la imagen */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Sombra blanca con 50% de opacidad */
+}
+
+/*================================================
+Clients CSS 
+=================================================*/
+
+.clients-area-dynamic .uk-slidenav {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.clients-area-dynamic .uk-slidenav:hover {
+    color: #fff;
+    background-color: #ed6c1b;
+}
+
+.clients-area-dynamic .uk-dotnav > * > * {
+    border: 1px solid #ccc;
+}
+
+.clients-area-dynamic .uk-dotnav > .uk-active > * {
+    background-color: #ed6c1b;
+    border-color: transparent;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN ABOUT SUMMARY --- */
+.about-summary-area {
+    background-color: #fcfcfc; /* Fondo casi blanco, muy sutil */
+    padding-top: 80px;
+    padding-bottom: 80px;
+    /* background-image: url('/images/bg-pattern-light.png'); */ /* Asegúrate de tener esta imagen */
+    /* background-repeat: repeat; */
+    /* background-size: 100px; */ /* Tamaño del patrón */
+}
+
+.about-summary-image {
+    position: relative;
+    padding: 15px; /* Padding para crear el efecto de "card" */
+    background-color: #ffffff; /* Fondo blanco para la "card" de la imagen */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: all 0.3s ease;
+}
+
+.about-summary-image:hover {
+    transform: translateY(-8px); /* Se levanta un poco al pasar el ratón */
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+.about-summary-image img {
+    border-radius: 8px; /* Bordes ligeramente más pequeños que la "card" */
+    display: block; /* Asegura que no haya espacios debajo de la imagen */
+    max-width: 100%;
+    height: auto;
+}
+
+.about-summary-content {
+    padding-left: 20px; /* Un poco de espacio para el contenido */
+}
+
+.about-summary-content .section-title {
+    margin-bottom: 30px;
+    text-align: left; /* Título alineado a la izquierda para esta sección */
+}
+
+.about-summary-content .section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.about-summary-content .section-title .bar {
+    margin-left: 0; /* Asegura que la barra esté debajo del título */
+}
+
+.about-summary-content .about-text-highlight {
+    font-size: 20px; /* Texto destacado más grande */
+    font-weight: 600; /* Más peso para destacar */
+    color: #2c3e50; /* Color más oscuro para mejor contraste */
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.about-summary-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-summary-content .uk-button-default {
+    background-color: #ed6c1b;
+    border-color: #ed6c1b;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.about-summary-content .uk-button-default:hover {
+    background-color: #d15c15;
+    border-color: #d15c15;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive para la sección About Summary */
+@media only screen and (max-width: 991px) {
+    .about-summary-image {
+        margin-bottom: 40px;
+    }
+    .about-summary-content {
+        padding-left: 0;
+        text-align: center; /* Centra el texto en móvil */
+    }
+    .about-summary-content .section-title {
+        text-align: center;
+    }
+    .about-summary-content .section-title .bar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* --- ESTILOS PARA LA SECCIÓN FINAL CTA  --- */
+
+.final-cta-area {
+    background: linear-gradient(to right, #243B55, #141E30) !important;    
+    color: #ffffff !important; /* Forzamos el color del texto a blanco */
+    padding: 80px 40px;
+    border-radius: 15px;
+    margin: 80px auto;
+    max-width: 1100px;
+    box-shadow: 0 15px 40px rgba(20, 30, 48, 0.35);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Asegura que el z-index principal sea 1 */
+}
+
+/* Pseudo-elemento para una textura sutil de fondo */
+.final-cta-area::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.07) 0%, transparent 35%);
+    z-index: 2; /* Se posiciona encima del fondo pero debajo del contenido */
+}
+
+.final-cta-area .cta-content {
+    position: relative; /* Asegura que el contenido esté por encima de todo */
+    z-index: 3;
+}
+
+.final-cta-area .cta-content h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff !important; /* Forzamos el color del título a blanco */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.final-cta-area .cta-content p {
+    font-size: 18px;
+    color: #e0e0e0 !important; /* Forzamos el color del párrafo a un gris claro */
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+}
+
+.final-cta-area .cta-content .uk-button-primary {
+    background-color: #ed6c1b;
+    border-color: #ed6c1b;
+    color: #ffffff;
+    padding: 15px 40px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.final-cta-area .cta-content .uk-button-primary:hover {
+    background-color: #ffffff; /* El fondo cambia a blanco */
+    color: #141E30; /* El texto toma el color oscuro del fondo para un contraste elegante */
+    border-color: #ffffff;
+    /* Eliminamos el 'transform' para una animación más suave */
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2); /* Sutil brillo blanco al pasar el cursor */
+}
+/* --- Responsive para CTA --- */
+@media (max-width: 767px) {
+    .final-cta-area {
+        margin: 40px 15px;
+        padding: 60px 20px;
+    }
+    .final-cta-area .cta-content h2 {
+        font-size: 30px;
+    }
+    .final-cta-area .cta-content p {
+        font-size: 16px;
+    }
+}
+/* --- ESTILOS PARA EL BOTÓN CTA DENTRO DE LAS TARJETAS --- */
+
+.cta-btn {
+  display: inline-block;
+  background-color: #ed6c1b; /* Color naranja principal de la marca */
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: auto; /* Empuja el botón hacia el fondo de la tarjeta */
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #0000FF; /* Color negro al pasar el mouse */
+  color: #ffffff;
+  transform: translateY(-3px); /* Ligero efecto de elevación */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste para que el contenido de la tarjeta se estire y el botón quede abajo */
+.service-card-improved .service-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenedor crezca */
+    height: 100%;
 }
 
 /* Keyframes para la animación de pulso */

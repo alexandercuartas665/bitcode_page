@@ -42,15 +42,15 @@ export const productsData: { name: string; desc: string; icon: IconDefinition; i
     image: "/images/products/perifericos.jpg"
   },
   {
-    name: "Licencias de Windows",
-    desc: "Gestionamos la adquisición y renovación de licencias de Windows, asegurando que tus sistemas operativos estén siempre actualizados y cumplan con las normativas de seguridad y legalidad.",
-    icon: faWindowMaximize,
+    name: "Licencias",
+    desc: "Gestionamos la adquisición y renovación de licencias de Windows y antivirus, cumpliendo con las normativas de seguridad y legalidad.",
+    icon: faWindowMaximize, //faShieldAlt,
     image: "/images/products/licencias.jpg"
   },
-  {
+/*  {
     name: "Licencia Antivirus",
     desc: "Proveemos licencias de antivirus de alta calidad para proteger tus sistemas contra amenazas y ataques, asegurando la seguridad de tus datos y la continuidad de tus operaciones.",
     icon: faShieldAlt,
     image: "/images/products/antivirus.jpg"
-  }
+  }*/
 ];
